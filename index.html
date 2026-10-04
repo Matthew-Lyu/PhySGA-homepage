@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PhySGA is a physics-space grounded agentic framework for generalizable and interactive 3D object composition.">
+  <meta name="keywords" content="PhySGA, 3D object composition, embodied AI, agentic framework, physical simulation">
+  <meta property="og:title" content="PhySGA: A Physics-Space Grounded Agentic Framework">
+  <meta property="og:description" content="Interactive 3D object composition through agent exploration and physical simulation.">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PhySGA: A Physics-Space Grounded Agentic Framework">
+  <meta name="twitter:description" content="Interactive 3D object composition through agent exploration and physical simulation.">
+  <meta name="twitter:image" content="static/images/teaser.png">
+
+  <title>PhySGA: A Physics-Space Grounded Agentic Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              PhySGA: A Physics-Space Grounded Agentic Framework for Generalizable and Interactive 3D Composition
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://matthew-lyu.github.io/">Weichen Lyu</a><sup>1,*</sup>,</span>
+              <span class="author-block"><a href="https://xiac20.github.io/">Chong Xia</a><sup>1,*</sup>,</span>
+              <span class="author-block"><a href="https://dongmingyu111.github.io/">Mingyu Dong</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://gaolon.github.io/xulong/">Long Xu</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://shengjun-zhang.github.io/">Shengjun Zhang</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>1,†</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors affiliations">
+              <span class="author-block"><sup>1</sup>Tsinghua University</span>
+              <span class="author-block"><sup>2</sup>Zhejiang University</span>
+              <br>
+              <span class="publication-status">Preprint</span>
+              <br>
+              <span class="eql-cntrb"><small><sup>*</sup>Equal contribution. <sup>†</sup>Corresponding author.</small></span>
+            </div>
+
+            <div class="column has-text-centered publication-links">
+              <span class="link-block">
+                <a href="#" aria-disabled="true" title="Paper link coming soon" class="external-link button is-normal is-rounded is-dark placeholder-link">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" aria-disabled="true" title="Code coming soon" class="external-link button is-normal is-rounded is-dark placeholder-link">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code (Coming Soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" aria-disabled="true" title="arXiv link coming soon" class="external-link button is-normal is-rounded is-dark placeholder-link">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/teaser.png" alt="PhySGA teaser showing interactive rigid, articulated, and deformable 3D object composition">
+        <h2 class="subtitle has-text-justified teaser-caption">
+          <strong>PhySGA</strong> grounds 3D object composition directly in physical space. Its agents construct, simulate, observe, and refine rigid, articulated, and deformable objects until they form the stable relations specified by the instruction.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="demo-video" autoplay controls muted loop height="100%" preload="metadata">
+          <source src="static/videos/supplementary_video.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              3D object composition is pivotal to digital content creation and robot simulation, while also serving as a critical testbed for physical intelligence in foundation models. Previous methods either leverage large language models to directly predict object coordinates, or utilize generative diffusion priors to synthesize composite images for visual alignment, both of which rely on static priors in digital spaces. However, these methods consistently struggle with complex compositions such as precise hanging, gravity-driven settling, and hidden containment, as these tasks require interactive construction processes involving global planning, fine-grained alignment, and physical simulation. To address these challenges, we propose <strong>PhySGA</strong>, a <strong>Phy</strong>sics-<strong>S</strong>pace <strong>G</strong>rounded <strong>A</strong>gentic Framework for 3D composition via agent exploration and physical simulation, enabling the universal interactive assembly of rigid, articulated, and deformable objects. We design a collaborative feedforward-feedback architecture in which an Assembly Agent performs global step planning and coarse adjustment, while a Critic Agent diagnoses simulated outcomes and performs fine-grained closed-loop correction. Action Routers map semantic decisions onto executable physical primitives, and a task-specific Self-Evolving Skill Library distills successful interaction experience for reuse. Extensive experiments in Isaac Sim demonstrate that PhySGA substantially improves relation fidelity, physical plausibility, and visual quality over existing methods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified figure-block">
+            <img src="static/images/pipeline.png" alt="Overview of the PhySGA framework">
+            <p>
+              <strong>Overview of PhySGA.</strong> The Assembly Agent uses geometric and kinematic reasoning to produce a global construction plan and execute metric-grounded coarse adjustments. Physical simulation then exposes contact and stability outcomes. The Critic Agent diagnoses failures and performs pixel-grounded fine-grained corrections, while Action Routers translate both agents' semantic decisions into executable simulator commands. A Self-Evolving Skill Library preserves successful interaction experience for later tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Experimental Results</h2>
+          <div class="content results-block">
+            <img src="static/images/results1.png" alt="PhySGA experimental results, part one">
+            <img src="static/images/results2.png" alt="PhySGA experimental results, part two">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>@misc{lyu2026physga,
+  title  = {PhySGA: A Physics-Space Grounded Agentic Framework for
+            Generalizable and Interactive 3D Composition},
+  author = {Lyu, Weichen and Xia, Chong and Dong, Mingyu and Xu, Long and
+            Zhang, Shengjun and Duan, Yueqi},
+  year   = {2026},
+  note   = {Preprint}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This website follows the layout of the <a href="https://xiac20.github.io/SimRecon/" target="_blank" rel="noopener">SimRecon project page</a>, built from the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a> and inspired by <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
